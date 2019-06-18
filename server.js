@@ -101,11 +101,11 @@ app.get('/pagecount', function (req, res) {
     initDb(function(err){});
   }
   if (db) {
-    db.collection('counts').count(function(err, count ){
-      res.send('{ pageCount: ' + count + '}');
+    db.collection('customers').count(function(err, count ){
+      res.send('{ customerCount: ' + count + '}');
     });
   } else {
-    res.send('{ pageCount: -1 }');
+    res.send('{ customerCount: -1 }');
   }
 });
 
